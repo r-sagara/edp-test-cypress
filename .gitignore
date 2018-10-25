@@ -1,4 +1,6 @@
 node_modules
+cypress/integration/examples
+*\index.js
 
 logs
 *.log
