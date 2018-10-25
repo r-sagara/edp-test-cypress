@@ -1,0 +1,14 @@
+{
+  "name": "edp-cypress",
+  "version": "1.0.0",
+  "description": "auto tests for edp using cypress framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sagara",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.1.0"
+  }
+}
