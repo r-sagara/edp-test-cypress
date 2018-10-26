@@ -1,17 +1,7 @@
-const name = "admin"
-const pass = "admin"
-
-function checkLogin() {
-    cy.get('body').then($body => {
-        if($body.find(":contains('Link')")) {
-            cy.login(name, pass)
-        }
-    })
-}
 
 describe('General testing', () => {
     before(() => {
-        cy.login(name, pass)
+        cy.login()
     });
 
     it('Current URL contains /home', () => {
@@ -22,7 +12,7 @@ describe('General testing', () => {
         const menuItems = ['Types', 'Victories']
         cy.wrap(menuItems).each(menuItem => {
             cy.contains(menuItem).click()
-            checkLogin()
+            cy.checkLogin()
         })
     });
 
