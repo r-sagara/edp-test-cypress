@@ -4,6 +4,10 @@ describe('General testing', () => {
         cy.login()
     });
 
+    beforeEach(() => {
+        cy.checkLogin()
+    });
+
     it('Current URL contains /home', () => {
         cy.url().should('contain', '/home')
     });
@@ -16,7 +20,7 @@ describe('General testing', () => {
         })
     });
 
-    it.only('There is the search bar', () => {
+    it('There is the search bar', () => {
         var testText = 'TestSearch'
         cy.get('#search').invoke('attr', 'placeholder')
             .should('contain', 'Search')

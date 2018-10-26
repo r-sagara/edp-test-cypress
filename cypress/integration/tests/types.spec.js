@@ -1,8 +1,6 @@
 describe('Types testing', () => {
     before(() => {
-        const name = "admin"
-        const pass = "admin"
-        cy.login(name, pass)
+        cy.login()
     });
 
     beforeEach(() => {
