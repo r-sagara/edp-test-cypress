@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Consumption",
+    "subtypes": [
+      {"name": "Evolution"},
+      {"name": "Smart decisions"}
+    ]
+  },
+  {
+    "name": "Savings",
+    "subtypes": [
+      {"name": "Evolution"},
+      {"name": "Super house"},
+      {"name": "Selfconsumption"},
+      {"name": "Smart decisions"}
+    ]
+  },
+  {
+    "name": "Consumption",
+    "subtypes": [
+      {"name": "Evolution"},
+      {"name": "Selfconsumption"},
+      {"name": "Smart decisions"}
+    ]
+  }
+]
