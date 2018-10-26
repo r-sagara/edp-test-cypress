@@ -24,7 +24,7 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (name, pass) => {
+Cypress.Commands.add('login', (name="admin", pass="admin") => {
     cy.visit('/')
     cy.get('form').within(() => {
         cy.contains('Nickname')
@@ -32,5 +32,13 @@ Cypress.Commands.add('login', (name, pass) => {
         cy.contains('Password')
             .next().type(pass)
         cy.contains('Join').click()
+    })
+})
+
+Cypress.Commands.add('checkLogin', (creds) => {
+    cy.get('body').then($body => {
+        if($body.find(":contains('Link')")) {
+            cy.login()
+        }
     })
 })
