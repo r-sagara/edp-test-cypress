@@ -40,8 +40,8 @@ Cypress.Commands.add('login', (name="admin", pass="admin") => {
 
 Cypress.Commands.add('checkLogin', () => {
     cy.get('body').then($body => {
-        //cy.log(!($body.find('menu').length))
-        if(!($body.find('.menu').length)) {
+        if($body.find('.menu').length) {
+        } else if ($body.find('#nickname').length) {
             typeCreds()
         }
     })
