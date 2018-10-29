@@ -23,6 +23,7 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
 function typeCreds(name="admin", pass="admin") {
     cy.get('form').within(() => {
         cy.contains('Nickname')
