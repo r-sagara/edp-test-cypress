@@ -40,6 +40,7 @@ Cypress.Commands.add('login', (name="admin", pass="admin") => {
 })
 
 Cypress.Commands.add('checkLogin', () => {
+    cy.wait(500)
     cy.get('body').then($body => {
         if($body.find('.menu').length) {
         } else if ($body.find('#nickname').length) {
@@ -47,3 +48,36 @@ Cypress.Commands.add('checkLogin', () => {
         }
     })
 })
+
+Cypress.Commands.add('checkPage', (link) => {
+    cy.url().then(currentLink => {
+        if(!currentLink.includes(link)) {
+            cy.visit(link)
+        }
+    })
+})
+
+// Cypress.Commands.add('checkAttr', {
+//     prevSubject: true
+// }, (subject, value) => { TODO
+
+// })
+
+Cypress.Commands.add('console', {
+    prevSubject: true
+  }, (subject, method) => {
+    // the previous subject is automatically received
+    // and the commands arguments are shifted
+  
+    // allow us to change the console method used
+    method = method || 'log'
+  
+    // log the subject to the console
+    console[method]('The subject is', subject)
+  
+    // whatever we return becomes the new subject
+    //
+    // we don't want to change the subject so
+    // we return whatever was passed in
+    return subject
+  })
